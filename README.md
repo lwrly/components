@@ -1,27 +1,18 @@
-# Components
+# Components by Let's Work Remote.ly!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+Project created via the [Angular Libraries Tutorial][].
 
-## Development server
+### In this repo
+| Package                 | Description                                                               | Docs               |
+| ----------------------- | ------------------------------------------------------------------------- | ------------------ |
+| `@lwrly/markdown`       | A markdown-supported text editor with built-in preview and event emitter. | [Docs][mark-docs]  |
+| `@lwrly/checkout`       | Angular components built on top of the [Stripe API][]                     | [Docs][check-docs] |
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[Angular Libraries Tutorial]: https://angular.io/guide/creating-libraries
+[Stripe API]: https://developers.google.com/maps/documentation/javascript/tutorial
+[mark-docs]: https://material.angular.io/cdk/categories
+[check-docs]: https://material.angular.io
+[contributing]: https://github.com/lwrly/components/blob/master/CONTRIBUTING.md
+[help-wanted]: https://github.com/lwrly/components/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
+[getting-started]: https://material.angular.io/guide/getting-started
