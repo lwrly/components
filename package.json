@@ -9,7 +9,7 @@
   "homepage": "https://letsworkremote.ly",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/lwrly/mark"
+    "url": "https://github.com/lwrly/components"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
