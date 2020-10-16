@@ -1,24 +1,44 @@
-# Markdown
+Markdown
+========
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
+A simple Angular component that allows for quick editing and previewing of markdown files.
 
-## Code scaffolding
+# Install
 
-Run `ng generate component component-name --project markdown` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project markdown`.
-> Note: Don't forget to add `--project markdown` or else it will be added to the default project in your `angular.json` file. 
+### With NPM:
+```
+npm i @lwrly/markdown
+```
 
-## Build
+### With Yarn:
+Not available (yet).
 
-Run `ng build markdown` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Configuring
 
-## Publishing
+In your `app.module.ts`:
+```
+...
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ...other stuff,
+    MarkdownModule
+  ],
+...
+```
 
-After building your library with `ng build markdown`, go to the dist folder `cd dist/markdown` and run `npm publish`.
+In your component file:
+```
+<markdown></markdown>
+```
 
-## Running unit tests
+Additionally, the following properties are available to the component:
 
-Run `ng test markdown` to execute the unit tests via [Karma](https://karma-runner.github.io).
+| Property       | Type         | | Description                                                                                 | 
+| -------------- | ------------ | | ------------------------------------------------------------------------------------------- | 
+| `compiled`     | string       | |                                                                                             | 
+| `placeholder`  | string       | | Custom message to place inside editor textarea as a preview. Default is `# We <3 markdown!` | 
+| `valueChanged` | EventEmitter | | Emits a compiled markdown string when text is entered into the editor.                      | 
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Bugs/Contributing
+Open an issue!
