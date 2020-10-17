@@ -6,16 +6,6 @@ const MARKDOWN_PLACEHOLDER = `# We <3 markdown!`;
 
 @Component({
   selector: 'lwrly-markdown',
-  template: `
-<div class="lwrly-markdown-editor-top">
-  <button (click)="preview = false" class="btn-lwrly btn-lwrly-edit">Edit</button>
-  <button (click)="preview = true" class="btn-lwrly btn-lwrly-preview">Preview</button>
-</div>
-<div class="lwrly-markdown-editor-bottom">
-  <textarea rows="25" [placeholder]="placeholder" (keyup)="onValueChange($event)" [hidden]="preview"></textarea>
-  <div [innerHtml]="compiled" [hidden]="!preview"></div>
-</div>
-  `,
   styles: [`
 .btn-lwrly {
   background-color: #fff;
@@ -80,21 +70,45 @@ textarea {
   font-size: 14px;
   font-family: 'Monaco', courier, monospace;
   padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 code {
   color: #f66;
 }
- `]
+` ],
+  template: `
+<div class="lwrly-markdown-editor-top">
+  <button (click)="preview = false" class="btn-lwrly btn-lwrly-edit">Edit</button><button (click)="preview = true" class="btn-lwrly btn-lwrly-preview">Preview</button>
+</div>
+<div class="lwrly-markdown-editor-bottom">
+  <textarea rows="25" 
+    [placeholder]="placeholder" 
+    [value]="value" 
+    [hidden]="preview"
+  ></textarea> <!-- (keyup)="onValueChange($event)" -->
+  <div [innerHtml]="value" [hidden]="!preview"></div>
+</div>
+  `
 })
 export class MarkdownComponent implements OnInit {
   @Output() valueChanged = new EventEmitter<string>();
-  @Input() compiled: string;
   @Input() placeholder: string;
-
+  markdownValue: string = "";
   preview: boolean = false;
 
   constructor(private md: MarkdownService) { }
+
+  @Input() 
+  get value(): string {
+    return this.markdownValue;
+  }
+  
+  set value(val) {
+    this.markdownValue = this.md.toSanitizedHtmlString(val);
+    this.valueChanged.emit(this.markdownValue);
+  }
 
   ngOnInit(): void { 
     if(!this.placeholder) {
@@ -102,13 +116,9 @@ export class MarkdownComponent implements OnInit {
     } 
   }
 
-  onValueChange(e) {
-    const body = e.target.value;
-
-    if (!body) {
-      return this.valueChanged.emit(this.md.toSanitizedHtmlString(this.placeholder)); 
-    }
-    this.compiled = this.md.toSanitizedHtmlString(body);
-    this.valueChanged.emit(body);
-  }
+  //onValueChange(e) {
+  //  if (!e.target.value) { return; }
+  //  this.markdownValue = this.md.toSanitizedHtmlString(e.target.value);
+  //  this.valueChanged.emit(this.markdownValue);
+  //}
 }
