@@ -80,45 +80,57 @@ code {
 ` ],
   template: `
 <div class="lwrly-markdown-editor-top">
-  <button (click)="preview = false" class="btn-lwrly btn-lwrly-edit">Edit</button><button (click)="preview = true" class="btn-lwrly btn-lwrly-preview">Preview</button>
+  <button (click)="edit()" class="btn-lwrly btn-lwrly-edit">Edit</button><button (click)="preview()" class="btn-lwrly btn-lwrly-preview">Preview</button>
 </div>
 <div class="lwrly-markdown-editor-bottom">
-  <textarea rows="25" 
+  <textarea 
+    [attr.rows]="rows" 
     [placeholder]="placeholder" 
-    [value]="value" 
-    [hidden]="preview"
-  ></textarea> <!-- (keyup)="onValueChange($event)" -->
-  <div [innerHtml]="value" [hidden]="!preview"></div>
+    [value]="input" 
+    [hidden]="previewing"
+  ></textarea>
+  <div [innerHtml]="markdownOutput" [hidden]="!previewing"></div>
 </div>
   `
 })
 export class MarkdownComponent implements OnInit {
-  @Output() valueChanged = new EventEmitter<string>();
+  @Output() markdownOutputChanged = new EventEmitter<string>();
   @Input() placeholder: string;
-  markdownValue: string = "";
-  preview: boolean = false;
+  @Input() rows: number;
+  markdownInput: string;
+  markdownOutput: string = "";
+  previewing: boolean = false;
 
   constructor(private md: MarkdownService) { }
 
   @Input() 
-  get value(): string {
-    return this.markdownValue;
+  get input(): string {
+    return this.markdownInput;
   }
   
-  set value(val) {
-    this.markdownValue = this.md.toSanitizedHtmlString(val);
-    this.valueChanged.emit(this.markdownValue);
+  set output(val) {
+    this.markdownOutput = this.md.toSanitizedHtmlString(val);
+    this.markdownOutputChanged.emit(this.markdownOutput);
   }
 
   ngOnInit(): void { 
     if(!this.placeholder) {
       this.placeholder = MARKDOWN_PLACEHOLDER;
-    } 
+    }
+    if(!this.rows) {
+      this.rows = 1;
+    }
+    if(!this.markdownInput) {
+      this.markdownInput = MARKDOWN_PLACEHOLDER;
+    }
+    this.markdownOutput = this.md.toSanitizedHtmlString(this.markdownInput);
   }
 
-  //onValueChange(e) {
-  //  if (!e.target.value) { return; }
-  //  this.markdownValue = this.md.toSanitizedHtmlString(e.target.value);
-  //  this.valueChanged.emit(this.markdownValue);
-  //}
+  edit() {
+    this.previewing = false;
+  }
+
+  preview() {
+    this.previewing = true;
+  }
 }
