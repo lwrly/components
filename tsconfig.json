@@ -19,6 +19,22 @@
       "markdown": [
         "dist/markdown/markdown",
         "dist/markdown"
+      ],
+      "footer": [
+        "dist/footer/footer",
+        "dist/footer"
+      ],
+      "search": [
+        "dist/search/search",
+        "dist/search"
+      ],
+      "image-management": [
+        "dist/image-management/image-management",
+        "dist/image-management"
+      ],
+      "checkout": [
+        "dist/checkout/checkout",
+        "dist/checkout"
       ]
     }
   }

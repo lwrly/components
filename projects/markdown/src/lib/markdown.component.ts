@@ -88,8 +88,9 @@ code {
     [placeholder]="placeholder" 
     [value]="input" 
     [hidden]="previewing"
+    (keyup)="keyupHandler($event)"
   ></textarea>
-  <div [innerHtml]="markdownOutput" [hidden]="!previewing"></div>
+  <div class="lwrly-md-preview" [innerHtml]="markdownOutput" [hidden]="!previewing"></div>
 </div>
   `
 })
@@ -108,8 +109,9 @@ export class MarkdownComponent implements OnInit {
     return this.markdownInput;
   }
   
-  set output(val) {
-    this.markdownOutput = this.md.toSanitizedHtmlString(val);
+  keyupHandler(e) {
+    if(!e.target.value) { return; }
+    this.markdownOutput = this.md.toSanitizedHtmlString(e.target.value);
     this.markdownOutputChanged.emit(this.markdownOutput);
   }
 
