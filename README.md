@@ -17,8 +17,8 @@ Project created via the [Angular Libraries Tutorial][].
 [contributing]: https://github.com/lwrly/components/blob/master/CONTRIBUTING.md
 [help-wanted]: https://github.com/lwrly/components/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
 [getting-started]: https://material.angular.io/guide/getting-started
-[check-docs]: https://letsworkremote.ly
-[foot-docs]: https://letsworkremote.ly
-[mark-docs]: https://letsworkremote.ly
-[image-docs]: https://letsworkremote.ly
-[search-docs]: https://letsworkremote.ly
+[check-docs]: https://github.com/lwrly/components/tree/master/projects/checkout
+[foot-docs]: https://github.com/lwrly/components/tree/master/projects/footer
+[mark-docs]: https://github.com/lwrly/components/tree/master/projects/markdown
+[image-docs]: https://github.com/lwrly/components/tree/master/projects/image-management
+[search-docs]: https://github.com/lwrly/components/tree/master/projects/search
