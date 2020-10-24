@@ -80,7 +80,7 @@ code {
 ` ],
   template: `
 <div class="lwrly-markdown-editor-top">
-  <button (click)="edit()" class="btn-lwrly btn-lwrly-edit">Edit</button><button (click)="preview()" class="btn-lwrly btn-lwrly-preview">Preview</button>
+  <button type="button" (click)="edit()" class="btn-lwrly btn-lwrly-edit">Edit</button><button type="button" (click)="preview()" class="btn-lwrly btn-lwrly-preview">Preview</button>
 </div>
 <div class="lwrly-markdown-editor-bottom">
   <textarea 

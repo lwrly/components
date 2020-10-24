@@ -165,22 +165,6 @@ import { Component, OnInit } from '@angular/core';
   `]
 })
 export class SiteFooterComponent implements OnInit {
-
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }
-/*
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'site-footer',
-  templateUrl: '../templates/footer.html',
-  styleUrls: ['../styles/styles.css']
-})
-export class SiteFooterComponent {
-  constructor() { }
-}
-*/

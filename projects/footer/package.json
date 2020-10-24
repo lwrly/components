@@ -1,6 +1,16 @@
 {
-  "name": "footer",
-  "version": "0.0.1",
+  "name": "@lwrly/footer",
+  "version": "1.0.1",
+  "private": false,
+  "description": "Site footer for https://letsworkremote.ly.",
+  "author": {
+    "name": "Let'sWorkRemote.ly!"
+  },
+  "homepage": "https://letsworkremote.ly",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/lwrly/components"
+  },
   "peerDependencies": {
     "@angular/common": "^10.1.6",
     "@angular/core": "^10.1.6"
