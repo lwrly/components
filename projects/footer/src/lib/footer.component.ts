@@ -37,13 +37,16 @@ import { Component, OnInit } from '@angular/core';
           </div>
           <div class="row footer-links">
             <div class="col"><a class="text-decoration-none text-dark" href="https://letsworkremote.ly/cookie-policy">Cookie Policy</a></div>
-            <div class="col"></div>
+            <div class="col"><a class="text-decoration-none text-dark" href="https://letsworkremote.ly/bugs">Report Bug</a></div>
             <div class="col"><a class="text-decoration-none text-dark" href="https://letsworkremote.ly/help">Help</a></div>
           </div>
         </div>
         <div class="col-lg-3 border-left blw-1">
           <div class="row pb-4">
             <div class="col text-right">
+              <a class="btn btn-sm btn-outline-secondary text-decoration-none text-dark border-0 m-1 p-1" href="https://github.com/lwrly" target="_blank">
+                <i class="fab fa-lg fa-github"></i>
+              </a>
               <a class="btn btn-sm btn-outline-secondary text-decoration-none text-dark border-0 m-1 p-1" href="https://www.linkedin.com/company/letsworkremote-ly" target="_blank">
                 <i class="fab fa-lg fa-linkedin"></i>
               </a>
@@ -61,7 +64,7 @@ import { Component, OnInit } from '@angular/core';
           <div class="row py-2">
             <div class="col text-right">
               <h5>Let'sWorkRemote.ly</h5>
-              <img src="https://letsworkremote.ly/assets/lwrly-logo-transparent.png">
+              <img src="https://letsworkremote.ly/assets/lwrly-logo-transparent.png" alt="Let's Work Remotely">
               <span class="copyright pl-2">Copyright &copy; 2020</span>
             </div>
           </div>
@@ -137,7 +140,6 @@ import { Component, OnInit } from '@angular/core';
 .blw-1 {
   border-left: 3px solid white !important;
 }
-
 
 .bw-1 {
   border-width: 1px;

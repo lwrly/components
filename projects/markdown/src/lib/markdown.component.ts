@@ -63,7 +63,6 @@ textarea {
   box-sizing: border-box;
   padding: 0 20px;
   border: none;
-  border-right: 1px solid #ccc;
   resize: none;
   outline: none;
   background-color: #f6f6f6;
